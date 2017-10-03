@@ -10,21 +10,19 @@ const GetTime = (props) => {
 			<p> { props.time }</p>
 	);
 }
-class Clock extends React.Component {
+class App extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = { date : new Date() };
-		//this.timerID = setInterval(() => this.tick(), 1000);
-
 	}
 	// Lifecycle Hooks
 	componentDidMount() {
-		this.timerID = setInterval(() => this.tick(), 1000);
+		this.myTimer = setInterval(() => this.tick(), 1000);
 		console.log('IN');
 	}
 
 	componentWillUnmount() {
-		clearInterval(this.timerID);
+		clearInterval(this.myTimer);
 		console.log('OUT');
 	}
 
@@ -45,4 +43,4 @@ class Clock extends React.Component {
 		);
  }
 }
-ReactDOM.render(<Clock />, document.querySelector('#app'));
+ReactDOM.render(<App />, document.querySelector('#app'));
