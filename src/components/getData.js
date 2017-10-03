@@ -22,9 +22,9 @@ export default class GetData extends Component {
   render() {
     return (
       <ul className="weather_list">
-      <li key={this.index} className="logo_temperature"><span className="logo__style">{this.state.response.temp}</span></li>
-      <li key={this.index} className="logo_presure"><span className="logo__style">{this.state.response.pressure}</span></li>
-      <li key={this.index} className="logo_humidity"><span className="logo__style">{this.state.response.humidity}</span></li>
+        <li key={this.index} className="logo_temperature"><span className="logo__style">{this.state.response.temp}</span></li>
+        <li key={this.index} className="logo_presure"><span className="logo__style">{this.state.response.pressure}</span></li>
+        <li key={this.index} className="logo_humidity"><span className="logo__style">{this.state.response.humidity}</span></li>
       </ul>
     );
   }

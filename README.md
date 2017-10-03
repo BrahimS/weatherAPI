@@ -2,6 +2,7 @@
 A simple weather application that informs us of the date and the local time, as well as the real time meteorological changes of the city of Geneva in Switzerland,
 
 * React.js v16
+* Axios
 * Webpack 3
 * Babel
 * ES6

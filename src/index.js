@@ -7,7 +7,7 @@ import './sass/index.sass';
 
 const GetTime = (props) => {
 	return (
-			<p> { props.time }</p>
+		<p>{ props.time }</p>
 	);
 }
 class App extends React.Component {
@@ -34,12 +34,12 @@ class App extends React.Component {
 
 	render() {
 		return  (
-				<div>
-					<h1 className="heading">Geneva </h1>
-					<span className="date_info"> { this.state.date.toLocaleDateString() }</span>
-					<GetTime time={this.state.date.toLocaleTimeString()}/>
-					<GetData />
-				</div>
+			<div>
+				<h1 className="heading">Geneva </h1>
+				<span className="date_info"> { this.state.date.toLocaleDateString() }</span>
+				<GetTime time={this.state.date.toLocaleTimeString()}/>
+				<GetData />
+			</div>
 		);
  }
 }
