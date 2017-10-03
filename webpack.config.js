@@ -6,6 +6,11 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CompressionWebpackPlugin = require("compression-webpack-plugin");
 
+// config for the DEV AND PROD ENVIREMENTS
+
+const isProduction = process.env.NODE_ENV === 'production';
+const cssProd = isProduction ? '?minimize!postcss-loader' : '';
+
 const config = {
   // define the exact path for the entry file
   entry: path.resolve("src/index.js"),
@@ -24,7 +29,7 @@ const config = {
         test: /\.sass$/,
         use: ExtractTextPlugin.extract({
           fallback: "style-loader",
-          use: ["css-loader", "sass-loader"],
+          use: `css-loader${cssProd}!sass-loader`,
           publicPath: "dist"
         })
       },
@@ -41,7 +46,7 @@ const config = {
       {
         test: /\.pug$/,
         use: ["pug-loader"]
-      }
+      },
     ]
   },
 
@@ -52,7 +57,11 @@ const config = {
     port: 9000
   },
   plugins: [
-    new ExtractTextPlugin("css/style.css"),
+    new ExtractTextPlugin({
+      filename: "css/style.css",
+      allChunks: true,
+      disable:!isProduction,
+    }),
     new webpack.ProgressPlugin(),
     new HtmlWebpackPlugin({
       template: "src/templates/index.pug",
@@ -63,7 +72,8 @@ const config = {
       algorithm: "gzip",
       test: /\.(js|html|css)$/,
       threshold: 10240,
-      minRatio: 0.8
+      minRatio: 0.8,
+      disable: !isProduction
     })
   ]
 };
