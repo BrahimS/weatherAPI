@@ -1,8 +1,9 @@
 # weatherAPI
-Geneva weather app info
+A simple weather application that informs us of the date and the local time, as well as the real time meteorological changes of the city of Geneva in Switzerland,
 
-* Reactjs
+* React.js v16
 * Webpack 3
+* Babel
 * ES6
 * SASS
 
@@ -10,7 +11,7 @@ Geneva weather app info
  Please have a look at the code and feel free to modify it or use it if you wish.
 
 ## Caption
-![](https://s3-us-west-2.amazonaws.com/s.cdpn.io/149454/weatherAPI.png)
+![](https://s3-us-west-2.amazonaws.com/s.cdpn.io/149454/weatherAPI.jpg)
 
 ### Install
 ```

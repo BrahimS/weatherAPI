@@ -6,7 +6,10 @@ $black : #000
 $colorShadow : rgba($black,.9)
 $boxShadow : (0px) (2px) (-10px) (4px) $colorShadow
 
-$url: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/149454/homeBkg.jpg"
+$url: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/149454/weatherBkg.jpg"
+$urlPresure: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/149454/presure.svg"
+$urlTemprerature : "https://s3-us-west-2.amazonaws.com/s.cdpn.io/149454/temperature.svg"
+$urlHumidity: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/149454/humidity.svg"
 $font_url__google1 : 'https://fonts.googleapis.com/css?family=Roboto:100'
 $font_family__primary : 'Roboto', sans-serif
 
@@ -14,13 +17,14 @@ body
 	background-color: $bkgColor
 	color: white
 	text-align: center
-	line-height: 1.2
-	font-weight: 100
+	line-height: 1
 	font-family: $font_family__primary
 
 .heading
+	margin-top: 1em
 	font-weight: 100
 	font-size: 2.5em
+	font-weight: 100
 	font-family: $font_family__primary
 
 
@@ -51,20 +55,52 @@ ul, li
 
 		.date_info
 			display: inline-block
-			margin-top: -2em
+			margin-top: .6em
 
 		.weather_list
 			position: absolute
 			width: 100%
 			//bottom: 2em
-			left: 45%
-			top: 75%
+			left: 38%
+			top: 70%
 			line-height: 1.5
 			font-size: 1.1em
 			transform: translate(-50%, -50%)
 
 			& li
 				box-shadow: $boxShadow
+				display: inline-block
+				margin: 0 0 2em 2em
+
+			.logo__style
+				display: inline-block
+				margin-top: 4em
+				margin-left: -1em
+
+		.logo_temperature, .logo_presure, .logo_humidity
+			width: 2.3em
+			height: 3em
+
+		.logo_temperature
+			display: block
+			background-image: url($urlTemprerature)
+			background-size: cover
+			background-repeat: no-repeat
+			background-position: 0 0
+
+		.logo_presure
+			display: block
+			background-image: url($urlPresure)
+			background-size: cover
+			background-repeat: no-repeat
+			background-position: 0 0
+
+		.logo_humidity
+			display: block
+			background-image: url($urlHumidity)
+			background-size: cover
+			background-repeat: no-repeat
+			background-position: 0 0
 
 
 
