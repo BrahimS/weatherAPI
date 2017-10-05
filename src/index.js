@@ -1,15 +1,12 @@
-
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import GetData from './components/getData';
+import {GetTime} from './components/getTime';
+import PropTypes from 'prop-types';
 import './sass/index.sass';
 
 
-const GetTime = (props) => {
-	return (
-		<p>{ props.time }</p>
-	);
-}
+
 class App extends React.Component {
 	constructor(props) {
 		super(props);
@@ -43,4 +40,10 @@ class App extends React.Component {
 		);
  }
 }
+
+App.propTypes = {
+	date: PropTypes.string,
+	myTimer: PropTypes.func
+};
+
 ReactDOM.render(<App />, document.querySelector('#app'));

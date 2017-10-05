@@ -1,12 +1,12 @@
-// Fetch data from the weather API
 import React, { Component } from "react";
 import axios from "axios";
+import PropTypes from 'prop-types';
 
 export default class GetData extends Component {
   constructor(props) {
     super(props);
-    this.state = { response: {} };
-
+    this.state = {response: {} };
+    // Fetch data from the weather API
     axios
       .get(
         "https://api.openweathermap.org/data/2.5/weather?q=geneva,sw&APPID=ac0cfa66f282d661a006b687796d1b65&units=metric"
@@ -29,3 +29,8 @@ export default class GetData extends Component {
     );
   }
 }
+
+GetData.propTypes = {
+  response: PropTypes.object,
+  index: PropTypes.number
+};
